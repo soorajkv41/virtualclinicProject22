@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'admindashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'saveservices' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+                      <label  class="form-label">Service Name</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="serv_name">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Rates</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="Rates">
+                    </div>
+     <div class="mb-3">
+                      <label  class="form-label">Description</label>
+         <textarea type="text" class="form-control"  name="ds"></textarea>
+                    </div>
+     <div class="mb-3">
+                      <label  class="form-label">Service Photo</label>
+                      <input type="file" class="form-control" name="serv_photo">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+</body>
+</html>
+{% endblock %}

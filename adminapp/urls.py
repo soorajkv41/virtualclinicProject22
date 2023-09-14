@@ -1,0 +1,63 @@
+from django.urls import path
+from adminapp import views
+
+urlpatterns=[
+    path('adminpage/',views.adminpage,name="adminpage"),
+    path('addhospital/',views.addhospital,name="addhospital"),
+    path('savehospital/',views.savehospital,name="savehospital"),
+    path('displayhospital/',views.displayhospital,name="displayhospital"),
+    path('edithospital/<int:dataid>/',views.edithospital,name="edithospital"),
+    path('updatehospital/<int:dataid>/',views.updatehospital,name="updatehospital"),
+    path('deletehospital/<int:dataid>/',views.deletehospital,name="deletehospital"),
+    path('adddoctors/', views.adddoctors, name="adddoctors"),
+    path('savedoctor/', views.savedoctor, name="savedoctor"),
+    path('displaydoctors/', views.displaydoctors, name="displaydoctors"),
+    path('editdoctor/<int:dataid>/', views.editdoctor, name="editdoctor"),
+    path('updatedoctor/<int:dataid>/', views.updatedoctor, name="updatedoctor"),
+    path('deletedoctor/<int:dataid>/', views.deletedoctor, name="deletedoctor"),
+    path('addservices/', views.addservices, name="addservices"),
+    path('displayservices/', views.displayservices, name="displayservices"),
+    path('saveservices/', views.saveservices, name="saveservices"),
+    path('editservices/<int:dataid>/', views.editservices, name="editservices"),
+    path('updateservice/<int:dataid>/', views.updateservice, name="updateservice"),
+    path('deleteservice/<int:dataid>/', views.deleteservice, name="deleteservice"),
+    path('', views.loginpage, name="loginpage"),
+    path('loginsucces/', views.loginsucces, name="loginsucces"),
+    path('logoutuser/', views.logoutuser, name="logoutuser"),
+    path('addmedicine/', views.addmedicine, name="addmedicine"),
+    path('savemedicine/', views.savemedicine, name="savemedicine"),
+    path('displaymedicine/', views.displaymedicine, name="displaymedicine"),
+    path('editmedicine/<int:dataid>/', views.editmedicine, name="editmedicine"),
+    path('updatemedicine/<int:dataid>/', views.updatemedicine, name="updatemedicine"),
+    path('deletemedicine/<int:dataid>/', views.deletemedicine, name="deletemedicine"),
+    path('gallery/', views.gallery, name="gallery"),
+    path('savegallery/', views.savegallery, name="savegallery"),
+    path('displaygallery/', views.displaygallery, name="displaygallery"),
+    path('editgallery/<int:dataid>/', views.editgallery, name="editgallery"),
+    path('updategallery/<int:dataid>/', views.updategallery, name="updategallery"),
+    path('deletegallery/<int:dataid>/', views.deletegallery, name="deletegallery"),
+    path('adddepartment/', views.adddepartment, name="adddepartment"),
+    path('savedepartment/', views.savedepartment, name="savedepartment"),
+    path('displaydept/', views.displaydept, name="displaydept"),
+    path('editdept/<int:dataid>/', views.editdept, name="editdept"),
+    path('updatedept/<int:dataid>/', views.updatedept, name="updatedept"),
+    path('deletedept/<int:dataid>/', views.deletedept, name="deletedept"),
+    path('displaycontact/', views.displaycontact, name="displaycontact"),
+    path('deletecontact/<int:dataid>/', views.deletecontact, name="deletecontact"),
+    path('displayappoitment/', views.displayappoitment, name="displayappoitment"),
+    path('deleteappoitment/<int:dataid>/', views.deleteappoitment, name="deleteappoitment"),
+    path('displayservice/', views.displayservice, name="displayservice"),
+    path('deletebookedservice/<int:dataid>/', views.deletebookedservice, name="deletebookedservice"),
+    path('deleteorders/<int:dataid>/', views.deleteorders, name="deleteorders"),
+    path('displayusers/', views.displayusers, name="displayusers"),
+    path('deleteusers/<int:dataid>/', views.deleteusers, name="deleteusers"),
+    path('displayacceptorders/', views.displayacceptorders, name="deleteudisplayacceptorderssers"),
+
+    path('displaybookedappointment/', views.displaybookedappointment, name="displaybookedappointment"),
+    path('saveanddelbookedappointmnet/<int:dataid>/', views.saveanddelbookedappointmnet, name="saveanddelbookedappointmnet"),
+
+
+
+
+
+]

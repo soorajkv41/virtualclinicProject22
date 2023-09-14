@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'admindashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'updatedept' dataid=data.id %}"enctype="multipart/form-data">
+    {% csrf_token %}
+  <div class="mb-3">
+                      <label  class="form-label">Department Name</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="dept" value="{{data.deptname}}">
+                    </div>
+   <div class="mb-3">
+                      <label  class="form-label">Department photo</label>
+                      <input type="file" class="form-control" id="exampleInputPassword1" name="dept_photo"value="{{data.deptphoto.url}}">
+
+                    </div>
+   <div class="mb-3">
+                      <label  class="form-label">Description </label>
+     <textarea type="text" class="form-control" id="exampleInputPassword1" name="desc">{{data.description}}</textarea>
+                    </div>
+     <div class="mb-3">
+                      <label  class="form-label">Description 2 </label>
+     <textarea type="text" class="form-control" id="exampleInputPassword1" name="desc2">{{data.description2}}</textarea>
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Features </label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="Features1" value="{{data.feature1}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Features </label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="Features2" value="{{data.feature2}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Features </label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="Features3" value="{{data.features3}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Features </label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="Features4" value="{{data.features4}}">
+                    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+</body>
+</html>
+{% endblock %}

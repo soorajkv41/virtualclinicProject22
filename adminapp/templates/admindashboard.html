@@ -1,0 +1,745 @@
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modernize Free</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/logos/favicon.png' %}" />
+  <link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+          <a href="./index.html" class="text-nowrap logo-img">
+            <img src="{% static 'images/logos/dark-logo.svg' %}" width="180" alt="" />
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Home</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'adminpage' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">ADMIN PANEL</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'addhospital' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-article"></i>
+                </span><ul> <span class="hide-menu">Hospitals</span></ul>
+
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displayhospital' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-alert-circle"></i>
+                </span>
+                <span class="hide-menu">Display Hospitals</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'adddoctors' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-cards"></i>
+                </span>
+                <span class="hide-menu">Add Doctors</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displaydoctors' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-file-description"></i>
+                </span>
+                <span class="hide-menu">Display Doctors</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'addservices' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu">Add Services</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displayservices' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu">Display Services</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'addmedicine' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu">Add medicine</span>
+              </a>
+            </li>
+             <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displaymedicine' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display medicine</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'addmedicine' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu">Add medicine</span>
+              </a>
+            </li>
+             <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displaymedicine' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display medicine</span>
+              </a>
+            </li>
+
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'gallery' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu">Add gallery photos</span>
+              </a>
+            </li>
+             <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displaygallery' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display gallery</span>
+              </a>
+            </li>
+             <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'adddepartment' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu">Add Deptment </span>
+              </a>
+            </li>
+             <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displaydept' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display department</span>
+              </a>
+            </li>
+             <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displaycontact' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display Contact</span>
+              </a>
+            </li>
+             <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displayappoitment' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display Appoitment</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displayservice' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display Booked service</span>
+              </a>
+            </li>
+ <li class="sidebar-item">
+              <a class="sidebar-link" href="" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display deleted  orders</span>
+              </a>
+            </li>
+               <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displayusers' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display Users </span>
+              </a>
+            </li>
+              <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'displaybookedappointment' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-typography"></i>
+                </span>
+                <span class="hide-menu"> Display Booked Appointment </span>
+              </a>
+            </li>
+
+
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">AUTH</span>
+            </li>
+              {% if request.session.username %}
+              <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'logoutuser' %} " aria-expanded="false">
+                <span>
+                  <i class="ti ti-login"></i>
+                </span>
+                <span class="hide-menu">Logout</span>
+              </a>
+            </li>
+              {% else %}
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'loginpage' %} " aria-expanded="false">
+                <span>
+                  <i class="ti ti-login"></i>
+                </span>
+                <span class="hide-menu">Login</span>
+              </a>
+            </li>
+              {% endif %}
+<!--            <li class="sidebar-item">-->
+<!--              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">-->
+<!--                <span>-->
+<!--                  <i class="ti ti-user-plus"></i>-->
+<!--                </span>-->
+<!--                <span class="hide-menu">Register</span>-->
+<!--              </a>-->
+<!--            </li>-->
+<!--            <li class="nav-small-cap">-->
+<!--              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>-->
+<!--              <span class="hide-menu">EXTRA</span>-->
+<!--            </li>-->
+<!--            <li class="sidebar-item">-->
+<!--              <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">-->
+<!--                <span>-->
+<!--                  <i class="ti ti-mood-happy"></i>-->
+<!--                </span>-->
+<!--                <span class="hide-menu">Icons</span>-->
+<!--              </a>-->
+<!--            </li>-->
+<!--            <li class="sidebar-item">-->
+<!--              <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">-->
+<!--                <span>-->
+<!--                  <i class="ti ti-aperture"></i>-->
+<!--                </span>-->
+<!--                <span class="hide-menu">Sample Page</span>-->
+<!--              </a>-->
+<!--            </li>-->
+          </ul>
+          <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
+<!--            <div class="d-flex">-->
+<!--              <div class="unlimited-access-title me-3">-->
+<!--                <h6 class="fw-semibold fs-4 mb-6 text-dark w-85">Upgrade to pro</h6>-->
+<!--                <a href="https://adminmart.com/product/modernize-bootstrap-5-admin-template/" target="_blank" class="btn btn-primary fs-2 fw-semibold lh-sm">Buy Pro</a>-->
+<!--              </div>-->
+<!--              <div class="unlimited-access-img">-->
+<!--               -->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <header class="app-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav">
+            <li class="nav-item d-block d-xl-none">
+              <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+                <i class="ti ti-menu-2"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                <i class="ti ti-bell-ringing"></i>
+                <div class="notification bg-primary rounded-circle"></div>
+              </a>
+            </li>
+          </ul>
+          <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+<!--              <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary"</a>-->
+              <li class="nav-item dropdown">
+                {% if request.session.username %} {{request.session.username}} {% endif %}
+                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img src="{% static 'images/profile/user-1.jpg' %}" alt="" width="35" height="35" class="rounded-circle">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                  <div class="message-body">
+                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                      <i class="ti ti-user fs-6"></i>
+                      <p class="mb-0 fs-3">My Profile</p>
+                    </a>
+                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                      <i class="ti ti-mail fs-6"></i>
+                      <p class="mb-0 fs-3">My Account</p>
+                    </a>
+                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                      <i class="ti ti-list-check fs-6"></i>
+                      <p class="mb-0 fs-3">My Task</p>
+                    </a>
+                    <a href="{% url 'logoutuser' %}" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!--  Header End -->
+      <div class="container-fluid">{% block content %}
+
+          {% if request.session.username %}
+          <b>Welcome</b>
+          {{request.session.username}}
+          {% endif %}<br><br>
+                <h2><u>New alerts <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"/>
+</svg></u></h2>
+          {% for i in data %}
+
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heptagon-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M7.779.052a.5.5 0 0 1 .442 0l6.015 2.97a.5.5 0 0 1 .267.34l1.485 6.676a.5.5 0 0 1-.093.415l-4.162 5.354a.5.5 0 0 1-.395.193H4.662a.5.5 0 0 1-.395-.193L.105 10.453a.5.5 0 0 1-.093-.415l1.485-6.676a.5.5 0 0 1 .267-.34L7.779.053z"/>
+</svg> New appointment alert from {{i.Name}}</p>
+
+          {% endfor %}
+          {% for i in pata %}
+          <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+  <circle cx="8" cy="8" r="8"/>
+</svg>new service request from {{i.fullname}}</p>
+          {% endfor %}
+
+         <h1><u> LIST OF USERS</u></h1>
+          {% for i in cata %}
+          <h6><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+</svg>{{i.firstname}}</h6>
+
+          {% endfor %}
+<!--        <img src="{% static 'images/backgrounds/dconsuting.jpeg' %}"width="900px;">-->
+        <!--  Row 1 -->
+<!--        <div class="row">-->
+<!--          <div class="col-lg-8 d-flex align-items-strech">-->
+<!--            <div class="card w-100">-->
+<!--              <div class="card-body">-->
+<!--                <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">-->
+<!--                  <div class="mb-3 mb-sm-0">-->
+<!--                    <h5 class="card-title fw-semibold">Sales Overview</h5>-->
+<!--                  </div>-->
+<!--                  <div>-->
+<!--                    <select class="form-select">-->
+<!--                      <option value="1">March 2023</option>-->
+<!--                      <option value="2">April 2023</option>-->
+<!--                      <option value="3">May 2023</option>-->
+<!--                      <option value="4">June 2023</option>-->
+<!--                    </select>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div id="chart"></div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-lg-4">-->
+<!--            <div class="row">-->
+<!--              <div class="col-lg-12">-->
+<!--                &lt;!&ndash; Yearly Breakup &ndash;&gt;-->
+<!--                <div class="card overflow-hidden">-->
+<!--                  <div class="card-body p-4">-->
+<!--                    <h5 class="card-title mb-9 fw-semibold">Yearly Breakup</h5>-->
+<!--                    <div class="row align-items-center">-->
+<!--                      <div class="col-8">-->
+<!--                        <h4 class="fw-semibold mb-3">$36,358</h4>-->
+<!--                        <div class="d-flex align-items-center mb-3">-->
+<!--                          <span-->
+<!--                            class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">-->
+<!--                            <i class="ti ti-arrow-up-left text-success"></i>-->
+<!--                          </span>-->
+<!--                          <p class="text-dark me-1 fs-3 mb-0">+9%</p>-->
+<!--                          <p class="fs-3 mb-0">last year</p>-->
+<!--                        </div>-->
+<!--                        <div class="d-flex align-items-center">-->
+<!--                          <div class="me-4">-->
+<!--                            <span class="round-8 bg-primary rounded-circle me-2 d-inline-block"></span>-->
+<!--                            <span class="fs-2">2023</span>-->
+<!--                          </div>-->
+<!--                          <div>-->
+<!--                            <span class="round-8 bg-light-primary rounded-circle me-2 d-inline-block"></span>-->
+<!--                            <span class="fs-2">2023</span>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="col-4">-->
+<!--                        <div class="d-flex justify-content-center">-->
+<!--                          <div id="breakup"></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-lg-12">-->
+<!--                &lt;!&ndash; Monthly Earnings &ndash;&gt;-->
+<!--                <div class="card">-->
+<!--                  <div class="card-body">-->
+<!--                    <div class="row alig n-items-start">-->
+<!--                      <div class="col-8">-->
+<!--                        <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>-->
+<!--                        <h4 class="fw-semibold mb-3">$6,820</h4>-->
+<!--                        <div class="d-flex align-items-center pb-1">-->
+<!--                          <span-->
+<!--                            class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">-->
+<!--                            <i class="ti ti-arrow-down-right text-danger"></i>-->
+<!--                          </span>-->
+<!--                          <p class="text-dark me-1 fs-3 mb-0">+9%</p>-->
+<!--                          <p class="fs-3 mb-0">last year</p>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="col-4">-->
+<!--                        <div class="d-flex justify-content-end">-->
+<!--                          <div-->
+<!--                            class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">-->
+<!--                            <i class="ti ti-currency-dollar fs-6"></i>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div id="earning"></div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--          <div class="col-lg-4 d-flex align-items-stretch">-->
+<!--            <div class="card w-100">-->
+<!--              <div class="card-body p-4">-->
+<!--                <div class="mb-4">-->
+<!--                  <h5 class="card-title fw-semibold">Recent Transactions</h5>-->
+<!--                </div>-->
+<!--                <ul class="timeline-widget mb-0 position-relative mb-n5">-->
+<!--                  <li class="timeline-item d-flex position-relative overflow-hidden">-->
+<!--                    <div class="timeline-time text-dark flex-shrink-0 text-end">09:30</div>-->
+<!--                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">-->
+<!--                      <span class="timeline-badge border-2 border border-primary flex-shrink-0 my-8"></span>-->
+<!--                      <span class="timeline-badge-border d-block flex-shrink-0"></span>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment received from John Doe of $385.90</div>-->
+<!--                  </li>-->
+<!--                  <li class="timeline-item d-flex position-relative overflow-hidden">-->
+<!--                    <div class="timeline-time text-dark flex-shrink-0 text-end">10:00 am</div>-->
+<!--                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">-->
+<!--                      <span class="timeline-badge border-2 border border-info flex-shrink-0 my-8"></span>-->
+<!--                      <span class="timeline-badge-border d-block flex-shrink-0"></span>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New sale recorded <a-->
+<!--                        href="javascript:void(0)" class="text-primary d-block fw-normal">#ML-3467</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="timeline-item d-flex position-relative overflow-hidden">-->
+<!--                    <div class="timeline-time text-dark flex-shrink-0 text-end">12:00 am</div>-->
+<!--                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">-->
+<!--                      <span class="timeline-badge border-2 border border-success flex-shrink-0 my-8"></span>-->
+<!--                      <span class="timeline-badge-border d-block flex-shrink-0"></span>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment was made of $64.95 to Michael</div>-->
+<!--                  </li>-->
+<!--                  <li class="timeline-item d-flex position-relative overflow-hidden">-->
+<!--                    <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>-->
+<!--                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">-->
+<!--                      <span class="timeline-badge border-2 border border-warning flex-shrink-0 my-8"></span>-->
+<!--                      <span class="timeline-badge-border d-block flex-shrink-0"></span>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New sale recorded <a-->
+<!--                        href="javascript:void(0)" class="text-primary d-block fw-normal">#ML-3467</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="timeline-item d-flex position-relative overflow-hidden">-->
+<!--                    <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>-->
+<!--                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">-->
+<!--                      <span class="timeline-badge border-2 border border-danger flex-shrink-0 my-8"></span>-->
+<!--                      <span class="timeline-badge-border d-block flex-shrink-0"></span>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New arrival recorded-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="timeline-item d-flex position-relative overflow-hidden">-->
+<!--                    <div class="timeline-time text-dark flex-shrink-0 text-end">12:00 am</div>-->
+<!--                    <div class="timeline-badge-wrap d-flex flex-column align-items-center">-->
+<!--                      <span class="timeline-badge border-2 border border-success flex-shrink-0 my-8"></span>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-desc fs-3 text-dark mt-n1">Payment Done</div>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-lg-8 d-flex align-items-stretch">-->
+<!--            <div class="card w-100">-->
+<!--              <div class="card-body p-4">-->
+<!--                <h5 class="card-title fw-semibold mb-4">Recent Transactions</h5>-->
+<!--                <div class="table-responsive">-->
+<!--                  <table class="table text-nowrap mb-0 align-middle">-->
+<!--                    <thead class="text-dark fs-4">-->
+<!--                      <tr>-->
+<!--                        <th class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0">Id</h6>-->
+<!--                        </th>-->
+<!--                        <th class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0">Assigned</h6>-->
+<!--                        </th>-->
+<!--                        <th class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0">Name</h6>-->
+<!--                        </th>-->
+<!--                        <th class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0">Priority</h6>-->
+<!--                        </th>-->
+<!--                        <th class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0">Budget</h6>-->
+<!--                        </th>-->
+<!--                      </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                      <tr>-->
+<!--                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">1</h6></td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                            <h6 class="fw-semibold mb-1">Sunil Joshi</h6>-->
+<!--                            <span class="fw-normal">Web Designer</span>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <p class="mb-0 fw-normal">Elite Admin</p>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <div class="d-flex align-items-center gap-2">-->
+<!--                            <span class="badge bg-primary rounded-3 fw-semibold">Low</span>-->
+<!--                          </div>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0 fs-4">$3.9</h6>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">2</h6></td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                            <h6 class="fw-semibold mb-1">Andrew McDownland</h6>-->
+<!--                            <span class="fw-normal">Project Manager</span>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <p class="mb-0 fw-normal">Real Homes WP Theme</p>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <div class="d-flex align-items-center gap-2">-->
+<!--                            <span class="badge bg-secondary rounded-3 fw-semibold">Medium</span>-->
+<!--                          </div>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0 fs-4">$24.5k</h6>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">3</h6></td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                            <h6 class="fw-semibold mb-1">Christopher Jamil</h6>-->
+<!--                            <span class="fw-normal">Project Manager</span>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <p class="mb-0 fw-normal">MedicalPro WP Theme</p>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <div class="d-flex align-items-center gap-2">-->
+<!--                            <span class="badge bg-danger rounded-3 fw-semibold">High</span>-->
+<!--                          </div>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0 fs-4">$12.8k</h6>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">4</h6></td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                            <h6 class="fw-semibold mb-1">Nirav Joshi</h6>-->
+<!--                            <span class="fw-normal">Frontend Engineer</span>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <p class="mb-0 fw-normal">Hosting Press HTML</p>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <div class="d-flex align-items-center gap-2">-->
+<!--                            <span class="badge bg-success rounded-3 fw-semibold">Critical</span>-->
+<!--                          </div>-->
+<!--                        </td>-->
+<!--                        <td class="border-bottom-0">-->
+<!--                          <h6 class="fw-semibold mb-0 fs-4">$2.4k</h6>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                    </tbody>-->
+<!--                  </table>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <div class="row">-->
+<!--          <div class="col-sm-6 col-xl-3">-->
+<!--            <div class="card overflow-hidden rounded-2">-->
+<!--              <div class="position-relative">-->
+<!--                <a href="javascript:void(0)"><img src="{% static 'images/products/s4.jpg' %}" class="card-img-top rounded-0" alt="..."></a>-->
+<!--                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>-->
+<!--              <div class="card-body pt-3 p-4">-->
+<!--                <h6 class="fw-semibold fs-4">Boat Headphone</h6>-->
+<!--                <div class="d-flex align-items-center justify-content-between">-->
+<!--                  <h6 class="fw-semibold fs-4 mb-0">$50 <span class="ms-2 fw-normal text-muted fs-3"><del>$65</del></span></h6>-->
+<!--                  <ul class="list-unstyled d-flex align-items-center mb-0">-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-sm-6 col-xl-3">-->
+<!--            <div class="card overflow-hidden rounded-2">-->
+<!--              <div class="position-relative">-->
+<!--                <a href="javascript:void(0)"><img src="{% static 'images/products/s5.jpg' %}" class="card-img-top rounded-0" alt="..."></a>-->
+<!--                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>-->
+<!--              <div class="card-body pt-3 p-4">-->
+<!--                <h6 class="fw-semibold fs-4">MacBook Air Pro</h6>-->
+<!--                <div class="d-flex align-items-center justify-content-between">-->
+<!--                  <h6 class="fw-semibold fs-4 mb-0">$650 <span class="ms-2 fw-normal text-muted fs-3"><del>$900</del></span></h6>-->
+<!--                  <ul class="list-unstyled d-flex align-items-center mb-0">-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-sm-6 col-xl-3">-->
+<!--            <div class="card overflow-hidden rounded-2">-->
+<!--              <div class="position-relative">-->
+<!--                <a href="javascript:void(0)"><img src="{% static 'images/products/s7.jpg' %}" class="card-img-top rounded-0" alt="..."></a>-->
+<!--                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>-->
+<!--              <div class="card-body pt-3 p-4">-->
+<!--                <h6 class="fw-semibold fs-4">Red Valvet Dress</h6>-->
+<!--                <div class="d-flex align-items-center justify-content-between">-->
+<!--                  <h6 class="fw-semibold fs-4 mb-0">$150 <span class="ms-2 fw-normal text-muted fs-3"><del>$200</del></span></h6>-->
+<!--                  <ul class="list-unstyled d-flex align-items-center mb-0">-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-sm-6 col-xl-3">-->
+<!--            <div class="card overflow-hidden rounded-2">-->
+<!--              <div class="position-relative">-->
+<!--                <a href="javascript:void(0)"><img src="{% static 'images/products/s11.jpg' %}" class="card-img-top rounded-0" alt="..."></a>-->
+<!--                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>-->
+<!--              <div class="card-body pt-3 p-4">-->
+<!--                <h6 class="fw-semibold fs-4">Cute Soft Teddybear</h6>-->
+<!--                <div class="d-flex align-items-center justify-content-between">-->
+<!--                  <h6 class="fw-semibold fs-4 mb-0">$285 <span class="ms-2 fw-normal text-muted fs-3"><del>$345</del></span></h6>-->
+<!--                  <ul class="list-unstyled d-flex align-items-center mb-0">-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>{% endblock %}
+        <div class="py-6 px-6 text-center">
+          <p class="mb-0 fs-4">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
+  <script src="{% static 'libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/sidebarmenu.js' %}"></script>
+  <script src="{% static 'js/app.min.js' %}"></script>
+  <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+  <script src="{% static 'libs/simplebar/dist/simplebar.js' %}"></script>
+  <script src="{% static 'js/dashboard.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    {% if messages %}
+        {% for i in messages %}
+            {% if i.tags == 'warning' %}
+                <script>
+                 swal('{{i}}','','warning')
+                </script>
+            {% elif i.tags == 'error' %}
+                <script>
+                 swal('{{i}}','','error')
+                </script>
+            {% else %}
+                <script>
+                 swal('{{i}}','','success')
+                </script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+
+</body>
+
+</html>

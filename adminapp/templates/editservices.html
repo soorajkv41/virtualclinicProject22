@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'admindashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'updateservice' dataid=data.id %}"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+                      <label  class="form-label">Service Name</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="serv_name" value="{{data.servicename}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Rates</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="Rates" value="{{data.rates}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Description</label>
+         <textarea type="text" class="form-control" id="exampleInputPassword1" name="ds">{{data.description}}</textarea>
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Service Photo</label>
+                      <input type="file" class="form-control" id="exampleInputPassword1" name="serv_photo"><img src="{{data.serv_photo.url}}" width="100px;">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends 'admindashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'updatedoctor' dataid=data.id %}"enctype="multipart/form-data">
+    {% csrf_token %}
+<h4>Edit Doctors</h4>
+                    <div class="mb-3">
+                      <label  class="form-label">Hospital Name</label>
+                      <select type="text" class="form-control" id="exampleInputPassword1" name="hos_name" >
+                          <option>{{data.hospitalname}}</option>
+
+                             {% for i in cata %}
+                          <option>{{i.hospitalname}}</option>
+                          {% endfor %}
+                      </select>
+
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Doctor Name</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="doc_name" value="{{data.doctorname}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Department</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="dept"value="{{data.department}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">contact number</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="con_no" value="{{data.contactnumber}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Email</label>
+                      <input type="email" class="form-control" id="exampleInputPassword1" name="Email"value="{{data.Email}}">
+                    </div>
+     <div class="mb-3">
+                      <label  class="form-label">Description</label>
+         <textarea  class="form-control" id="exampleInputPassword1" name="dis">{{data.description}}</textarea>
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Doctor Photo</label><img src="{{data.Doctor_photo.url}}" width="100px">
+                      <input type="file" class="form-control" id="exampleInputPassword1" name="image">
+                    </div>
+     <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% extends 'mainpage.html' %}
+{% block content %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+<section class="vh-100 gradient-custom" style="margin-bottom:190px;">
+  <div class="container py-5 h-100" >
+    <div class="row justify-content-center align-items-center h-100" >
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Edit Your Personal Info </h3>
+            <form method="post" action="{% url 'updateprofile' dataid=data.id %}">
+              {% csrf_token %}
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="firstName" name="fname" class="form-control form-control-lg" value="{{data.firstname}}" />
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="lastName" name="lname" class="form-control form-control-lg" value="{{data.lastname}}" />
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div class="form-outline datepicker w-100">
+                    <input type="date" name=date class="form-control form-control-lg" id="birthdayDate" value="{{data.dateofbirth}}"/>
+                    <label for="birthdayDate" class="form-label">Date Of Birth</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1">Gender: </h6>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input"  type="radio" name="g" id="femaleGender"
+                      value="{{data.gender}}" checked />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="g" id="maleGender"
+                      value="{{data.gender}}" />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="g" id="otherGender"
+                      value="{{data.gender}}" />
+                    <label class="form-check-label" for="otherGender">Other</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="email" id="emailAddress" name= "email" class="form-control form-control-lg" value="{{data.email}}"/>
+                    <label class="form-label" for="emailAddress">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="tel" id="phoneNumber" name="phone" class="form-control form-control-lg" value="{{data.number}}" />
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+              <div class="mt-4 pt-2">
+                <form>
+                <button class="btn btn-primary btn-lg" type="submit" value="update" >Update</button>
+                  </form>
+              </div>
+
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}

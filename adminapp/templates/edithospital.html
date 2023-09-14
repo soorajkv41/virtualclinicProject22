@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% extends 'admindashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Edit Hospital Detailes</h2>
+<form method="post" action="{% url 'updatehospital' dataid=data.id %}"enctype="multipart/form-data">
+    {% csrf_token %}
+<!--                    <div class="mb-3">-->
+<!--                      <label for="exampleInputEmail1" class="form-label">Email address</label>-->
+<!--                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
+<!--&lt;!&ndash;                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>&ndash;&gt;-->
+<!--                    </div>-->
+                    <div class="mb-3">
+                      <label  class="form-label">Hospital Name</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="hos_name" value="{{data.hospitalname}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Hospital Code</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="hos_code" value="{{data.hospitalcode}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Contact Number</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="ho_no" value="{{data.contactno}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="exampleInputPassword1" name="email" value="{{data.email}}">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Hospital Address 1</label>
+        <textarea class="form-control" id="exampleInputPassword1" name="add1">{{data.address1}}</textarea> <label  class="form-label">Hospital Address 2</label>
+        <textarea class="form-control" id="exampleInputPassword1" name="add2">{{data.addrress2}}</textarea>
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">State</label>
+        <select  class="form-control" id="exampleInputPassword1" name="state">
+            <option>{{data.state}}</option>
+        <option>Select one</option>
+        <option>Kerala</option>
+        <option>TamilNadu</option>
+        <option>Mumbai</option>
+        <option>Andhra Pradesh</option>
+        <option>karnataka</option>
+        </select>
+        <div class="mb-3">
+                      <label  class="form-label">District</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="district" value="{{data.district}}">
+                    </div>
+         <div class="mb-3">
+                      <label  class="form-label">Pincode</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="pin" value="{{data.pincode}}" >
+                    </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+</body>
+</html>
+{% endblock %}

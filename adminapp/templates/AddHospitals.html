@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% extends 'admindashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#county optgroup').hide();
+        $('#State').change(function(){
+            var text= $(this).val();
+                $('#county optgroup').hide();
+                $('#county').val('');
+                $('#county optgroup[label="'+text+'"]').css({'display':'block'});
+
+        });
+    });
+</script>
+
+<body>
+
+
+<form method="post" action="{% url 'savehospital' %}"enctype="multipart/form-data">
+    {% csrf_token %}
+<!--                    <div class="mb-3">-->
+<!--                      <label for="exampleInputEmail1" class="form-label">Email address</label>-->
+<!--                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
+<!--&lt;!&ndash;                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>&ndash;&gt;-->
+<!--                    </div>-->
+                    <div class="mb-3">
+                      <label  class="form-label">Hospital Name</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="hos_name">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Hospital Code</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="hos_code">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Contact Number</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="ho_no">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="exampleInputPassword1" name="email">
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">Hospital Address 1</label>
+        <textarea class="form-control" id="exampleInputPassword1" name="add1"></textarea> <label  class="form-label">Hospital Address 2</label>
+        <textarea class="form-control" id="exampleInputPassword1" name="add2"></textarea>
+                    </div>
+    <div class="mb-3">
+                      <label  class="form-label">State</label>
+<!--        <select  class="form-control" id="exampleInputPassword1" name="state">-->
+<!--        <option >Kerala</option>-->
+<!--        <option>TamilNadu</option>-->
+<!--        <option>Mumbai</option>-->
+<!--        <option>Andhra Pradesh</option>-->
+<!--        <option>karnataka</option>-->
+<!--        </select>-->
+        <select id="State"class="form-control" name="state">
+                <optgroup label="state">
+
+     <option value="kerala">kerala</option>
+               <option value="TamilNadu">TamilNadu</option>
+                </optgroup>
+             </select><br>
+       <select id="county" class="form-control" name="district">
+
+           <optgroup label="kerala">
+                  <option value="Ernakulam">Ernakulam</option>
+                   <option value="kottayam">kottayam</option>
+
+       </optgroup>
+       <optgroup label="TamilNadu">
+                    <option value="pondichery">pondichery</option>
+                    <option value="chennai">chennai</option>
+
+       </optgroup>
+
+       </select>
+
+
+<!--        <div class="mb-3">-->
+<!--                      <label  class="form-label">District</label>-->
+<!--                      <input type="text" class="form-control" id="exampleInputPassword1" name="district">-->
+<!--                    </div>-->
+         <div class="mb-3">
+                      <label  class="form-label">Pincode</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" name="pin">
+                    </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+</body>
+</html>
+{% endblock %}

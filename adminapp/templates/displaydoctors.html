@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'admindashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- On tables -->
+<table class="table-primary">
+    <tr>
+
+
+<!-- On rows -->
+<th class="table-primary">Hospital Name</th>
+<th class="table-primary">Doctor Name</th>
+<th class="table-primary">Department</th>
+<th class="table-primary">contact number</th>
+<th class="table-primary">Email</th>
+<th class="table-primary">Description</th>
+<th class="table-primary">Doctor Photo</th>
+
+</tr>
+    {% for i in data %}
+
+<!-- On cells (`td` or `th`) -->
+<tr>
+  <td class="table-primary">{{i.hospitalname}}</td>
+  <td class="table-primary">{{i.doctorname}}</td>
+  <td class="table-primary">{{i.department}}</td>
+  <td class="table-primary">{{i.contactnumber}}</td>
+  <td class="table-primary">{{i.Email}}</td>
+  <td class="table-primary">{{i.description}}</td>
+  <td class="table-primary"><img src="{{i.Doctor_photo.url}}" width="100px;">
+      </td>
+    <td>
+        <form action="{% url 'editdoctor' dataid=i.id %}">
+             <button type="submit" class="btn btn-primary">EDIT</button>
+        </form>
+    </td>
+    <td>
+        <form action="{% url 'deletedoctor' dataid=i.id %}">
+           <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+    </td>
+
+    {% endfor %}
+
+</tr>
+    </table>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}
